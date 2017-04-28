@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./vue.js"></script>
+	</head>
+
+	<body>
+		
+		<div id="demo">
+			<input v-model="message" />
+			<p>{{ message }}</p>
+		</div>
+	
+		<script>
+			var data = {
+				message:"hello",
+			}
+			//声明式渲染
+			//初始化一个实例，来启动应用
+			var vm = new Vue({
+				el:"#demo",
+				data:data
+			});
+
+		</script>
+
+
+
+	</body>
+</html>

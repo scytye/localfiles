@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Document</title>
+<style type="text/css">
+@keyframes rotate{
+	0%{
+		transform: translateZ(-50px) rotateY(0deg);
+	}
+	100% {
+		transform: translateZ(-50px) rotateY(-360deg);
+	}
+}
+@-webkit-keyframes rotate{
+	0%{
+		-webkit-transform: translateZ(-50px) rotateY(0deg);
+	}
+	100% {
+		-webkit-transform: translateZ(-50px) rotateY(-360deg);
+	}
+}
+.box {
+	width: 200px;
+	height: 200px;
+	margin: 50px auto;
+	border: 1px solid #ccc;
+	-webkit-perspective: 30px;
+	perspective: 30px;
+}
+.div {
+	width: 100px;
+	height: 100px;
+	margin: 50px auto;
+	transition: 6s;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	position: relative;
+	-webkit-animation: 5s rotate infinite linear;
+	animation: 5s rotate infinite linear; 
+}
+.div span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100px;
+	font-size: 50px;
+	line-height: 100px;
+	color: #fff;
+	text-align: center;
+}
+.div span:nth-of-type(1){
+	background: red;
+	-webkit-transform: rotateY(0deg) translateZ(50px);
+	transform: rotateY(0deg) translateZ(50px);
+}
+.div span:nth-of-type(2){
+	background: green;
+	-webkit-transform: rotateY(90deg) translateZ(50px);
+	transform: rotateY(90deg) translateZ(50px);
+}
+.div span:nth-of-type(3){
+	background: blue;
+	-webkit-transform: rotateY(180deg) translateZ(50px);
+	transform: rotateY(180deg) translateZ(50px);
+}
+.div span:nth-of-type(4){
+	background: yellow;
+	-webkit-transform: rotateY(270deg) translateZ(50px);
+	transform: rotateY(270deg) translateZ(50px);
+}
+</style>
+</head>
+<body>
+<div class="box">
+	<div class="div">
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+	</div>
+</div>
+</body>
+</html>

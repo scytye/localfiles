@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./vue.js"></script>
+	</head>
+
+	<body>
+		
+		<div id="demo">
+			{{message}}
+			<p v-bind:abc="title">
+				这是测试指令
+			</p>
+			<img :src="url" />
+		</div>
+
+		<script>
+
+			//代理 proxy  
+
+
+			var vm = new Vue({
+				el:"#demo",  //挂载点
+				data:{
+					message:"hello,vue",
+					title:10,
+					url:"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2033765348,1346395611&fm=116&gp=0.jpg"
+				}
+			});
+
+		</script>
+
+
+
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+.box {
+	width: 200px;
+	height: 200px;
+	background: red;
+	margin: 200px auto;
+	border: 1px solid #ccc;
+	perspective: 300px;
+}
+.div {
+	width: 100px;
+	height: 100px;
+	margin: 50px auto;
+	background: #000;
+	transition: 6s;
+	transform-style: preserve-3d;
+}
+.div span {
+	display: block;
+	height: 100px;
+	background: yellow;
+	transform: rotateX(60deg);
+	transform-style: preserve-3d;
+}
+.div em {
+	display: block;
+	height: 100px;
+	background: blue;
+	transform: rotateX(60deg);
+}
+.box:hover .div {
+	transform: rotateY(360deg); 
+} 
+ /*
+ 	turn
+	rad = deg*Math.PI/180
+ */
+
+/*
+	transform:
+		rotate 旋转
+			rotate(),rotateZ()
+			rotateX()
+			rotateY()
+			rotate3d()
+
+		scale 缩放
+			scale()
+			scaleX()
+			scaleY()
+			scaleZ()
+			scale3d()
+
+		skew 斜切
+			skew()
+			skewX()
+			skewY()
+
+		translate 位移
+			translate()
+			translateX()
+			translateY()
+			translateZ()
+			translate3d()	
+
+	transform-origin 设置变化原点 默认值(center center 0)		
+
+	transform 先写的后执行
+
+	perspective 景深
+
+	perspective-origin 景深原点
+
+	transform-style: preserve-3d; 是否保留子元素的3d变换
+*/
+</style>
+</head>
+<body>
+<div class="box">
+	<div class="div">
+		<span>
+			<em></em>
+		</span>
+	</div>
+</div>
+</body>
+</html>

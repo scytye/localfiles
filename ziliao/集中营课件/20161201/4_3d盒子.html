@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Document</title>
+<style type="text/css">
+#wrap {
+	width: 100px;
+	height: 100px;
+	margin: 100px auto;
+	-webkit-perspective: 500px;
+	perspective: 500px;
+}
+#box {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+#box span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100px;
+	height: 100px;
+	font-size: 70px;
+	text-align: center;
+	line-height: 100px;
+	color: #fff;
+	opacity: .8;
+}
+</style>
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+	var box = document.querySelector('#box');
+	var spans = document.querySelectorAll('#box span');
+	var spanW = css(spans[0],"width");
+	var spanDeg = 360/spans.length;
+	var deg = 0;
+	var R = Math.round(Math.tan((180-spanDeg)/2*Math.PI/180)*spanW/2);
+	for(var i = 0; i < spans.length; i++){
+		var x = Math.round(Math.sin(spanDeg*i*Math.PI/180)*R);
+		var z = Math.round(Math.cos(spanDeg*i*Math.PI/180)*R);
+		spans[i].style.backgroundColor = "rgba("+Math.round(255/spans.length*i)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+",1)";
+		
+		css(spans[i],"translateZ",z);
+		css(spans[i],"translateX",x);
+		css(spans[i],"rotateY",spanDeg*i);
+	}
+	setInterval(function(){
+		deg--;
+		css(box,"rotateY",deg);
+	},20);
+};
+</script>
+</head>
+<body>
+<div id="wrap">
+	<div id="box">
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+		<span>5</span>
+		<span>6</span>
+		<span>7</span>
+		<span>8</span>
+		<span>9</span>
+		<span>10</span>
+		<span>11</span>
+		<span>12</span>
+	</div>
+</div>
+</body>
+</html>

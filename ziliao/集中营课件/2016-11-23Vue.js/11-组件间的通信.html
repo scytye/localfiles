@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./vue.js"></script>
+	</head>
+
+	<body>
+		
+		<div id="demo" >
+
+			<list-component :lists="lists" v-on:changes="changeList"></list-component>
+			<list-component :lists="lists2"></list-component>
+		</div>
+
+		<script>
+
+		//父组件向子组件传递数据 放在子组件的自定义属性
+
+		//子组件中要改正父组件传递过来的数据
+
+		//子组件向父组件通信，用到自定义事件
+
+			Vue.component("list-component",{
+				data:function (){
+					return {
+						message:"我是子组件的信息"
+					}		
+				},
+				props:["lists"],
+				methods:{
+					changeTitle:function (){
+						/*this.lists = {
+							title:"我被更改了",
+							list:["a"]
+						}*/
+
+						var data = {
+							title:"我被更改了",
+							list:["a"]
+						}
+
+						this.$emit("changes",data)
+
+					}		
+				},
+				template:`
+					<div>
+						<input type="button" value="更改标题" @click="changeTitle" />
+						<h1>{{lists.title}}</h1>
+						<ul>
+							<li v-for="item,index in lists.list">
+								{{ item }}
+							</li>
+						</ul>
+					</div>
+				`
+			});
+
+			var vm = new Vue({
+				el:"#demo",  
+				data:{
+					message:"hello,我是父组件的信息",
+					lists:{
+						title:"娱乐新闻",
+						list:[1,2,3,4]
+					},
+					lists2:{
+						title:"体育新闻",
+						list:[1,2,3,4]
+					}
+				},
+				methods:{
+					changeList:function (data){
+						console.log("changeList");
+
+						this.lists = data;
+					}
+				}
+
+			});
+
+		</script>
+
+
+
+	</body>
+</html>

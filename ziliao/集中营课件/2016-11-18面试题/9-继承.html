@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+            拷贝继承。
+            原型继承。
+         */
+
+         var Person = function(name){
+            this.name = name;
+         };
+         Person.prototype.say = function(){
+            console.log(this.name);
+         };
+         var Coder = function(name){
+            Person.apply(this,arguments);
+         };
+
+        /* for(var attr in Person.prototype){
+            Coder.prototype[attr] = Person.prototype[attr];
+         }*/
+
+         var foo = function(){};
+         foo.prototype = Person.prototype;
+
+         Coder.prototype = new foo();
+
+         Coder.prototype.write = function(){
+            console.log('abc');
+         };
+
+         var laowang = new Coder('王允');
+
+         laowang.say();
+
+         var p1 = new Person('钟毅');
+
+         console.log(p1.write);
+
+         class Coder extends Person{
+            constructor(name){
+                super(name);
+            }
+         }
+    </script>
+</body>
+</html>

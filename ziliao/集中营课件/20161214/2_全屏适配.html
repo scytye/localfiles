@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<meta charset="UTF-8">
+<title>Document</title>
+<script type="text/javascript">
+(function(){
+	document.addEventListener('touchstart', function(e) {
+		e.preventDefault();
+	});
+	function fn(){
+		var html = document.documentElement;
+		html.style.fontSize = html.clientWidth/16 + "px";
+	}
+	fn();
+	window.addEventListener('onorientationchange' in window ? 'orientationchange' : "resize", fn);	
+})();
+</script>
+<style type="text/css">
+body,
+html {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+header {
+	height: 2.25rem;
+	background: url(img/header.png);
+	background-size: cover;
+}
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2.7333rem;
+	display: -webkit-box;
+	display: flex;
+}
+footer a {
+	width: 25%;
+	height: 100%;
+	float: left;
+	background: url(img/nav.png);
+	background-size: 16.6667rem 2.8333rem !important;
+}
+section {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 2.25rem;
+	bottom: 2.7333rem;
+	background: url(img/bg.png);
+	background-size: 100% 100%;
+}
+article {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -6.7167rem;
+	width: 100%;
+	height: 9.7rem;
+	background: url(img/img.png) center center no-repeat;
+	background-size: contain;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+	//alert(document.documentElement.clientHeight);
+	document.body.style.height = document.documentElement.clientHeight + "px";
+</script>
+<header></header>
+<section>
+	<article></article>
+</section>
+<footer>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<title>Document</title>
+<script type="text/javascript">
+getOrientation();
+function getOrientation(){
+	switch(window.orientation){
+		case 0:
+			alert("竖屏");
+			break;
+		case 180:
+			alert("竖屏");
+			break;
+		case 90:
+			alert("横屏");
+			break;
+		case -90:
+			alert("横屏");
+			break;		
+	}
+}
+window.addEventListener("orientationchange",getOrientation);
+</script>
+</head>
+<body>
+<div class="box">这是我的第一个页面</div>
+</body>
+</html>

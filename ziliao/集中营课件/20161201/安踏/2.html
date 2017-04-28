@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+body,
+p {
+	margin: 0;
+}
+@-webkit-keyframes rotate {
+	0% {
+		-webkit-transform: rotateY(0deg);
+	}
+	100% {
+		-webkit-transform: rotateY(360deg);
+	}
+}
+@keyframes rotate {
+	0% {
+		transform: rotateY(0deg);
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+.wrap,
+#bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	-webkit-perspective: 600px;
+	perspective: 600px;
+}
+#z,
+#box {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+#box {
+	/* -webkit-transform: scale(0);
+	transform: scale(0); */
+}
+#box span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: -585px 0 0 -64.5px;
+	width: 129px;
+	height: 1170px;
+	backface-visibility: hidden;
+}
+#bg {
+	background: url(bg/bg.jpg);
+	background-size: 100% 100%;
+}
+</style>
+</head>
+<body>
+<div id="bg"></div>
+<section class="wrap">
+	<div id="z">
+		<div id="box">
+			
+		</div>
+	</div>	
+</section>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+var data = [
+	"bg/1.png",
+	"bg/2.png",
+	"bg/3.png",
+	"bg/4.png",
+	"bg/5.png",
+	"bg/6.png",
+	"bg/7.png",
+	"bg/8.png",
+	"bg/9.png",
+	"bg/10.png",
+	"bg/11.png",
+	"bg/12.png",
+	"bg/13.png",
+	"bg/14.png",
+	"bg/15.png",
+	"bg/16.png",
+	"bg/17.png",
+	"bg/18.png",
+	"bg/19.png",
+	"bg/20.png"
+];
+window.onload = function(){
+	var box = document.querySelector('#box');
+	var zBox = document.querySelector('#z');
+	var span = box.children;
+	var inner = "";
+	var spanDeg = 360/span.length;
+	css(box,"scale",0);
+	css(box,"rotateY",-900);
+	for(var i = 0; i < data.length; i++){
+		inner += '<span style="background:url('+data[i]+')"></span>';
+	}
+	box.innerHTML = inner;
+	var spanW = css(span[0],"width");
+	var spanDeg = 360/span.length;
+	var R = Math.round(Math.tan((180-spanDeg)/2*Math.PI/180)*spanW/2);
+	for(var i = 0; i < span.length; i++){
+		css(span[i],"rotateY",-(i*spanDeg)-90);
+		console.log(-i*spanDeg);
+		css(span[i],"translateZ",-R);
+	}
+	MTween(box,{scale:100,rotateY:0},3000,"easeOut");
+	var nub = 0;
+	var speed = 10;
+//	console.log();
+	/*var timer = setInterval(function(){
+		var nowDeg = -540;
+		var deg  = -(nub*spanDeg)-90;
+		var disDeg = (deg - nowDeg)*speed;
+		//console.log(deg);
+		MTween(span[nub],{rotateY:deg},disDeg,"linear");
+			nub++;
+		if(nub >= span.length){
+			clearInterval(timer);
+		}	
+		console.log(new Date().getTime());
+	},spanDeg*speed)*/
+};
+/*
+0
+2.html:116 -18
+2.html:116 -36
+2.html:116 -54
+2.html:116 -72
+2.html:116 -90
+2.html:116 -108
+2.html:116 -126
+2.html:116 -144
+2.html:116 -162
+2.html:116 -180
+2.html:116 -198
+2.html:116 -216
+2.html:116 -234
+*/
+</script>
+</body>
+</html>

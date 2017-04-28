@@ -1,0 +1,51 @@
+<!-- 相当于HTML结构文件 -->
+<!-- view  text  image -->
+<!-- view 相当于div  text相当于没有样式的文本标签 只要放在这个标签里的文本才能长按选中 -->
+  <!-- vertical="true" 可以纵向轮播 -->
+  <!-- <swiper class="swiper" autoplay="true" interval="5000">
+    <swiper-item>
+      <image src="/image/1.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/2.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/3.jpg"></image>
+    </swiper-item>
+  </swiper>
+
+  <view class="box" style="width:100rpx;height:100rpx;background-color:red;"></view> -->
+
+<view class="container">
+
+  <!-- <view wx:if="{{n > 1 ? true : false}}" class="touxiang">
+    <image class="tupian" src="{{img}}"></image>
+  </view> -->
+  <!-- <text class="title">hello world</text> -->
+  <!-- bind 是绑定冒泡事件 catch 是阻止冒泡事件 -->
+  <!-- <view bindtap="click" class="btn">
+    <text catchtap="text">{{message}}</text>
+  </view> -->
+
+  <!-- <view wx:for="{{array}}" wx:for-item="aaa" wx:for-index="bbb">
+    {{bbb}}: {{aaa.message}}
+  </view> -->
+
+  <swiper class="swiper" autoplay="true" interval="5000">
+    <block wx:for="{{imgs}}">
+      <swiper-item>
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </block>
+    <!-- <swiper-item>
+      <image src="/image/2.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/3.jpg"></image>
+    </swiper-item> -->
+  </swiper>
+
+
+
+
+</view>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var reg = /abc/g;
+        var str = 'abcd';
+
+        console.log(reg.lastIndex)
+        console.log(reg.test(str))//true
+        console.log(reg.lastIndex)
+        console.log(reg.test(str))//false
+    </script>
+</body>
+</html>

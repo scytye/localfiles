@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./vue.js"></script>
+	</head>
+
+	<body>
+		
+		<div id="demo">
+			{{message}}
+			<p>
+				{{ abc }}
+			</p>
+			<input type="button" value="点我一下" @click="clickHandle"  />
+		</div>
+
+		<script>
+
+			//代理 proxy  
+
+
+			var vm = new Vue({
+				el:"#demo",  //挂载点
+				data:{
+					message:"hello,vue",
+					abc:10
+				},    //渲染的数据
+				methods:{
+					clickHandle:function (){
+						alert(1)	
+					}
+				}
+			});
+
+			console.log( vm );
+
+			vm.message = "hello1233"
+			//得到实例自身的属性，前面要加上$
+			console.log( vm.$data );
+			console.log( vm.$set );
+
+		</script>
+
+
+
+	</body>
+</html>

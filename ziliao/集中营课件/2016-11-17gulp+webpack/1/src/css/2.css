@@ -1,0 +1,18 @@
+div {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+}
+
+#div1 {
+    background: url('../images/noteblue.png');
+}
+#div2 {
+    background: url('../images/price_bg.png');
+}
+#div3 {
+    background: url('../images/registrationBtn.png');
+}
+#div4 {
+    background: url('../images/ring.png');
+}

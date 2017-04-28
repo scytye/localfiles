@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./vue.js"></script>
+	</head>
+
+	<body>
+		
+		<div id="demo">
+			
+		</div>
+
+		<script>
+			var data = {
+				message:1,
+				title:"我是客串的"
+			}
+			render();
+			function render(){
+				var html = `
+				<p>${data.message}</p>
+				<span>${data.title}</span>	
+			`
+
+
+				demo.innerHTML = html;
+			}
+
+				document.onclick = function (){
+					
+
+					setInterval(function 	(	){
+						data.message++;
+						render();		
+					},1000)
+
+				};
+
+
+		</script>
+
+
+
+	</body>
+</html>

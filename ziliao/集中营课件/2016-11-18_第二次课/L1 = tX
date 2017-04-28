@@ -1,0 +1,9 @@
+L1 = tX
+R1 = tX + box.offsetWidth
+T1 = tY
+B1 = tY + box.offsetHeight
+
+L2 = listBox.left
+R2 = listBox.left + listBox.width
+T2 = listBox.top
+B2 = listBox.top + listBox.heigt

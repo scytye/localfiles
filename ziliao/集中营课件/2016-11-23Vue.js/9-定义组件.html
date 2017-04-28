@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./vue.js"></script>
+	</head>
+
+	<body>
+		
+		<div id="demo" >
+
+			<alert-component></alert-component>
+			<alert-component>
+				<p>ok:您的操作成功</p>
+				<p>ok:您的操作成功</p>
+				<p>ok:您的操作成功</p>
+				<p>ok:您的操作成功</p>
+				<p>ok:您的操作成功</p>
+				<p>ok:我是多个内容</p>
+			</alert-component>
+			<alert-component>
+				<div>error:您的操作失败</div>
+			</alert-component>
+			<alert-component>
+				<div>warn:警告</div>
+			</alert-component>
+		</div>
+
+		<script>
+
+			//全局组件
+
+			//插槽 slot 一对标签
+
+			Vue.component("alert-component",{
+				data:function (){
+					return {
+						message:"我是子组件的信息"
+					}		
+				},
+				template:`
+					<div>
+						<slot><p>default:我是默认的提醒框</p></slot>
+						
+					</div>
+				`
+			});
+
+			var vm = new Vue({
+				el:"#demo",  
+				data:{
+					message:"hello,我是父组件的信息"
+				}
+
+			});
+
+		</script>
+
+
+
+	</body>
+</html>
