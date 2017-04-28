@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name = "x5-orientation" content="portrait"/>
+    <meta name = "x5-fullscreen" content="true"/>
+    <meta name = "screen-orientation" content="portrait"/>
+    <meta name = "full-screen" content="yes"/>
+    <meta name = "fromat-detection" content="telephone=no,email=no"/>
+    <title>Title</title>
+    <script>
+        (function () {
+            var html = document.documentElement;
+            var H = html.getBoundingClientRect().width;
+            html.style.fontSize = H/16 +'px';
+        })()
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/address.js"></script>
+    <script src="js/Tween.js"></script>
+    <script src="js/view.js"></script>
+</head>
+    <div class="weather">
+        <div class="header clearfix">
+            <div class="search">
+                <span class = "search-btn"></span>
+                <span class="city">北京市</span>
+            </div>
+            <div class="item-btn">
+                <span class="manager-icon"></span>
+                <span class="share-icon"></span>
+            </div>
+            <div class="city-note">
+                <em class="white"></em>
+                <em></em>
+                <em></em>
+                <em></em>
+                <em></em>
+            </div>
+        </div>
+        <div id="wrap">
+            <section>
+                <div class="weather-con">
+                    <div class="info-box sence">
+                        <div class="info">
+                            <div class ="info-weather">
+                                <a href="javascript:;">
+                                    <em class="tem">1</em>
+                                    <em class="ico_temp"></em>
+                                    <em class="ico-wea">雾</em>
+                                </a>
+                            </div>
+                            <div class="info-about">
+                                <ul>
+                                    <li>
+                                        <i class="ico_water"></i>
+                                        <i>77%</i>
+                                        <i class="ico_wind"></i>
+                                        <i>1级</i>
+                                    </li>
+                                    <li class="info-aqi">
+                                        <a href="javascript:;">
+                                            <span class='info-warn warn-3'></span>
+                                            <strong>
+                                                <i style=" font-weight: 400;">104</i>
+                                                <i>严重</i>
+                                            </strong>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="weather-announcer">
+                            <div class="tips">天气阴冷，穿暖和点吧！</div>
+                        </div>
+                    </div>
+                    <div class="days clearfix sence">
+                        <div class="single">
+                            <div>
+                                <em>今天</em>
+                                <b>-5 / 4°</b>
+                            </div>
+                            <div>
+                                <strong>霾</strong>
+                                <img src="">
+                            </div>
+                        </div>
+                        <div class="single">
+                            <div>
+                                <em>明天</em>
+                                <b>-2 / 4°</b>
+                            </div>
+                            <div>
+                                <strong>霾</strong>
+                                <img src="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hours-temp sence" style="border-width:1px;">
+                        <div class="tabs clearfix">
+                            <strong style="display:block">日落 16:50</strong>
+                            <em class="btn">
+                                <span class="word">24小时预报</span>
+                                <span class="ico_close"></span>
+                            </em>
+                        </div>
+                    </div>
+                    <div class="week-weather clearfix sence">
+                        <h3>6天预报</h3>
+                        <canvas class="week-line" width="710" height="246"></canvas>
+                        <ul class="clearfix featureUl">
+                            <li data-high="4" data-low="-5">
+                                <em>周日</em>
+                                <dl class="weather-per">
+                                    <dd>霾</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w45.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w46.png" alt="" /></dt>
+                                    <dd>霾</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>南风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="4" data-low="-2">
+                                <em>周一</em>
+                                <dl class="weather-per">
+                                    <dd>霾</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w45.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w46.png" alt="" /></dt>
+                                    <dd>霾</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>北风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="3" data-low="-6">
+                                <em>周二</em>
+                                <dl class="weather-per">
+                                    <dd>多云</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w1.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w31.png" alt="" /></dt>
+                                    <dd>多云</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>北风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="3" data-low="-5">
+                                <em>周三</em>
+                                <dl class="weather-per">
+                                    <dd>晴</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt="" /></dt>
+                                    <dd>晴</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>北风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="6" data-low="-5">
+                                <em>周四</em>
+                                <dl class="weather-per">
+                                    <dd>晴</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt="" /></dt>
+                                    <dd>晴</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>北风</dd>
+                                    <dd>3-4级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="5" data-low="-5">
+                                <em>周五</em>
+                                <dl class="weather-per">
+                                    <dd>晴</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt="" /></dt>
+                                    <dd>晴</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>南风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="exponent sence">
+                    <h3>生活指数</h3>
+                    <ul>
+                        <li>
+                            <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/0.png"></span>
+                            <em>较差</em>
+                            <em>空气指数</em>
+                        </li>
+                        <li>
+                            <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/7.png"></span>
+                            <em>保湿</em>
+                            <em>化妆</em>
+
+                        </li>
+                        <li>
+                            <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/12.png"></span>
+                            <em>极易发</em>
+                            <em>感冒</em>
+                        </li>
+                        <li>
+                            <span> <img src="https://h5tq.moji.com/mtianqi/assets/images/script/17.png"></span>
+                            <em>不宜</em>
+                            <em>洗车</em>
+                        </li>
+
+                        <li>
+                            <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/20.png"></span>
+                            <em>冷</em>
+                            <em>穿衣</em>
+                        </li>
+                        <li>
+                            <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/21.png"></span>
+                            <em> 最弱</em>
+                            <em>紫外线</em>
+                        </li>
+                        <li>
+                            <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/26.png"></span>
+                            <em>不适宜</em>
+                            <em>运动</em>
+                        </li>
+                        <li>
+                            <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/28.png"></span>
+                            <em>不适宜</em>
+                            <em>钓鱼</em>
+                        </li>
+                    </ul>
+                </div>
+                    <div class="news sence">
+                        <div class="news-hd">
+                            <h3>今日推荐</h3>
+                            <!--<div class="more">-->
+                                <!--<span>更多</span>-->
+                                <!--<span class="ico_return "></span>-->
+                            <!--</div>-->
+                        </div>
+                        <div class="news-con" style="width: 100%">
+                            <ul class="clearfix">
+                                <li class="oneImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                                <li class="oneImg-li"><a href="" target="_blank"><img src="image/img-1.png"></a></li>
+                            </ul>
+                            <ul class="clearfix">
+                                <li class="noImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                            </ul>
+                            <ul class="clearfix">
+                                <li class="oneImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                                <li class="oneImg-li"><a href="" target="_blank"><img src="image/img-1.png"></a></li>
+                            </ul>
+                            <ul class="clearfix">
+                                <li class="oneImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                                <li class="oneImg-li"><a href="" target="_blank"><img src="image/img-1.png"></a></li>
+                            </ul>
+                            <ul class="clearfix">
+                                <li class="oneImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                                <li class="oneImg-li"><a href="" target="_blank"><img src="image/img-1.png"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sence" style="width: 100%;height: 1.5rem;text-align: center;font-size: 0.7rem;color: #4291e4">已经没有了哦！</div>
+                </div>
+                <div class="weather-con">
+                    <div class="info-box sence">
+                        <div class="info">
+                            <div class ="info-weather">
+                                <a href="javascript:;">
+                                    <em class="tem">1</em>
+                                    <em class="ico_temp"></em>
+                                    <em class="ico-wea">雾</em>
+                                </a>
+                            </div>
+                            <div class="info-about">
+                                <ul>
+                                    <li>
+                                        <i class="ico_water"></i>
+                                        <i>77%</i>
+                                        <i class="ico_wind"></i>
+                                        <i>1级</i>
+                                    </li>
+                                    <li class="info-aqi">
+                                        <a href="javascript:;">
+                                            <span class='info-warn warn-3'></span>
+                                            <strong>
+                                                <i style=" font-weight: 400;">104</i>
+                                                <i>严重</i>
+                                            </strong>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="weather-announcer">
+                            <div class="tips">天气阴冷，穿暖和点吧！</div>
+                        </div>
+                    </div>
+                    <div class="days clearfix sence">
+                        <div class="single">
+                            <div>
+                                <em>今天</em>
+                                <b>-5 / 4°</b>
+                            </div>
+                            <div>
+                                <strong>霾</strong>
+                                <img src="">
+                            </div>
+                        </div>
+                        <div class="single">
+                            <div>
+                                <em>明天</em>
+                                <b>-2 / 4°</b>
+                            </div>
+                            <div>
+                                <strong>霾</strong>
+                                <img src="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hours-temp sence" style="border-width:1px;">
+                        <div class="tabs clearfix">
+                            <strong style="display:block">日落 16:50</strong>
+                            <em class="btn">
+                                <span class="word">24小时预报</span>
+                                <span class="ico_close" style="display: none"></span>
+                            </em>
+                        </div>
+                    </div>
+                    <div class="week-weather clearfix sence">
+                        <h3>6天预报</h3>
+                        <canvas class="week-line" width="710" height="246"></canvas>
+                        <ul class="clearfix featureUl">
+                            <li data-high="4" data-low="-5">
+                                <em>周日</em>
+                                <dl class="weather-per">
+                                    <dd>霾</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w45.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w46.png" alt="" /></dt>
+                                    <dd>霾</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>南风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="4" data-low="-2">
+                                <em>周一</em>
+                                <dl class="weather-per">
+                                    <dd>霾</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w45.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w46.png" alt="" /></dt>
+                                    <dd>霾</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>北风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="3" data-low="-6">
+                                <em>周二</em>
+                                <dl class="weather-per">
+                                    <dd>多云</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w1.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w31.png" alt="" /></dt>
+                                    <dd>多云</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>北风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="3" data-low="-5">
+                                <em>周三</em>
+                                <dl class="weather-per">
+                                    <dd>晴</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt="" /></dt>
+                                    <dd>晴</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>北风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="6" data-low="-5">
+                                <em>周四</em>
+                                <dl class="weather-per">
+                                    <dd>晴</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt="" /></dt>
+                                    <dd>晴</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>北风</dd>
+                                    <dd>3-4级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="5" data-low="-5">
+                                <em>周五</em>
+                                <dl class="weather-per">
+                                    <dd>晴</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt="" /></dt>
+                                    <dd>晴</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>南风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="exponent sence">
+                        <h3>生活指数</h3>
+                        <ul>
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/0.png"></span>
+                                <em>较差</em>
+                                <em>空气指数</em>
+                            </li>
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/7.png"></span>
+                                <em>保湿</em>
+                                <em>化妆</em>
+
+                            </li>
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/12.png"></span>
+                                <em>极易发</em>
+                                <em>感冒</em>
+                            </li>
+                            <li>
+                                <span> <img src="https://h5tq.moji.com/mtianqi/assets/images/script/17.png"></span>
+                                <em>不宜</em>
+                                <em>洗车</em>
+                            </li>
+
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/20.png"></span>
+                                <em>冷</em>
+                                <em>穿衣</em>
+                            </li>
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/21.png"></span>
+                                <em> 最弱</em>
+                                <em>紫外线</em>
+                            </li>
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/26.png"></span>
+                                <em>不适宜</em>
+                                <em>运动</em>
+                            </li>
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/28.png"></span>
+                                <em>不适宜</em>
+                                <em>钓鱼</em>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="news sence">
+                        <div class="news-hd">
+                            <h3>今日推荐</h3>
+                            <div class="more">
+                                <span>更多</span>
+                                <span class="ico_return "></span>
+                            </div>
+                        </div>
+                        <div class="news-con" style="width: 100%">
+                            <ul class="clearfix">
+                                <li class="oneImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                                <li class="oneImg-li"><a href="" target="_blank"><img src="image/img-1.png"></a></li>
+                            </ul>
+                            <ul class="clearfix">
+                                <li class="noImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                            </ul>
+                            <ul class="clearfix">
+                                <li class="oneImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                                <li class="oneImg-li"><a href="" target="_blank"><img src="image/img-1.png"></a></li>
+                            </ul>
+                            <ul class="clearfix">
+                                <li class="oneImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                                <li class="oneImg-li"><a href="" target="_blank"><img src="image/img-1.png"></a></li>
+                            </ul>
+                            <ul class="clearfix">
+                                <li class="oneImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                                <li class="oneImg-li"><a href="" target="_blank"><img src="image/img-1.png"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sence" style="width: 100%;height: 1.5rem;text-align: center;font-size: 0.7rem;color: #4291e4">已经没有了哦！</div>
+                </div>
+                <div class="weather-con">
+                    <div class="info-box sence">
+                        <div class="info">
+                            <div class ="info-weather">
+                                <a href="javascript:;">
+                                    <em class="tem">1</em>
+                                    <em class="ico_temp"></em>
+                                    <em class="ico-wea">雾</em>
+                                </a>
+                            </div>
+                            <div class="info-about">
+                                <ul>
+                                    <li>
+                                        <i class="ico_water"></i>
+                                        <i>77%</i>
+                                        <i class="ico_wind"></i>
+                                        <i>1级</i>
+                                    </li>
+                                    <li class="info-aqi">
+                                        <a href="javascript:;">
+                                            <span class='info-warn warn-3'></span>
+                                            <strong>
+                                                <i style=" font-weight: 400;">104</i>
+                                                <i>严重</i>
+                                            </strong>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="weather-announcer">
+                            <div class="tips" id="tips">天气阴冷，穿暖和点吧！</div>
+                        </div>
+                    </div>
+                    <div class="days clearfix sence">
+                        <div class="single">
+                            <div>
+                                <em>今天</em>
+                                <b>-5 / 4°</b>
+                            </div>
+                            <div>
+                                <strong>霾</strong>
+                                <img src="">
+                            </div>
+                        </div>
+                        <div class="single">
+                            <div>
+                                <em>明天</em>
+                                <b>-2 / 4°</b>
+                            </div>
+                            <div>
+                                <strong>霾</strong>
+                                <img src="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hours-temp sence" style="border-width:1px;">
+                        <div class="tabs clearfix">
+                            <strong style="display:block">日落 16:50</strong>
+                            <em class="btn">
+                                <span class="word">24小时预报</span>
+                                <span class="ico_close"></span>
+                            </em>
+                        </div>
+                    </div>
+                    <div class="week-weather clearfix sence">
+                        <h3>6天预报</h3>
+                        <canvas class="week-line" width="710" height="246"></canvas>
+                        <ul class="clearfix featureUl">
+                            <li data-high="4" data-low="-5">
+                                <em>周日</em>
+                                <dl class="weather-per">
+                                    <dd>霾</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w45.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w46.png" alt="" /></dt>
+                                    <dd>霾</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>南风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="4" data-low="-2">
+                                <em>周一</em>
+                                <dl class="weather-per">
+                                    <dd>霾</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w45.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w46.png" alt="" /></dt>
+                                    <dd>霾</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>北风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="3" data-low="-6">
+                                <em>周二</em>
+                                <dl class="weather-per">
+                                    <dd>多云</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w1.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w31.png" alt="" /></dt>
+                                    <dd>多云</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>北风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="3" data-low="-5">
+                                <em>周三</em>
+                                <dl class="weather-per">
+                                    <dd>晴</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt="" /></dt>
+                                    <dd>晴</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>北风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="6" data-low="-5">
+                                <em>周四</em>
+                                <dl class="weather-per">
+                                    <dd>晴</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt="" /></dt>
+                                    <dd>晴</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>北风</dd>
+                                    <dd>3-4级</dd>
+                                </dl>
+                            </li>
+                            <li data-high="5" data-low="-5">
+                                <em>周五</em>
+                                <dl class="weather-per">
+                                    <dd>晴</dd>
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="" /></dt>
+                                </dl>
+                                <div></div>
+                                <dl class="weather-per">
+                                    <dt><img src="https://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt="" /></dt>
+                                    <dd>晴</dd>
+                                </dl>
+                                <dl class="wind">
+                                    <dd>南风</dd>
+                                    <dd>3级</dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="exponent sence">
+                        <h3>生活指数</h3>
+                        <ul>
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/0.png"></span>
+                                <em>较差</em>
+                                <em>空气指数</em>
+                            </li>
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/7.png"></span>
+                                <em>保湿</em>
+                                <em>化妆</em>
+
+                            </li>
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/12.png"></span>
+                                <em>极易发</em>
+                                <em>感冒</em>
+                            </li>
+                            <li>
+                                <span> <img src="https://h5tq.moji.com/mtianqi/assets/images/script/17.png"></span>
+                                <em>不宜</em>
+                                <em>洗车</em>
+                            </li>
+
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/20.png"></span>
+                                <em>冷</em>
+                                <em>穿衣</em>
+                            </li>
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/21.png"></span>
+                                <em> 最弱</em>
+                                <em>紫外线</em>
+                            </li>
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/26.png"></span>
+                                <em>不适宜</em>
+                                <em>运动</em>
+                            </li>
+                            <li>
+                                <span><img src="https://h5tq.moji.com/mtianqi/assets/images/script/28.png"></span>
+                                <em>不适宜</em>
+                                <em>钓鱼</em>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="news sence">
+                        <div class="news-hd">
+                            <h3>今日推荐</h3>
+                            <div class="more">
+                                <span>更多</span>
+                                <span class="ico_return "></span>
+                            </div>
+                        </div>
+                        <div class="news-con" style="width: 100%">
+                            <ul class="clearfix">
+                                <li class="oneImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                                <li class="oneImg-li"><a href="" target="_blank"><img src="image/img-1.png"></a></li>
+                            </ul>
+                            <ul class="clearfix">
+                                <li class="noImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                            </ul>
+                            <ul class="clearfix">
+                                <li class="oneImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                                <li class="oneImg-li"><a href="" target="_blank"><img src="image/img-1.png"></a></li>
+                            </ul>
+                            <ul class="clearfix">
+                                <li class="oneImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                                <li class="oneImg-li"><a href="" target="_blank"><img src="image/img-1.png"></a></li>
+                            </ul>
+                            <ul class="clearfix">
+                                <li class="oneImg-ul">
+                                    <a href="" target="_blank">冷空气来袭，这个暖心的视频却看看哭了很多人</a>
+                                    <a href="" target="_blank">51养生网</a>
+                                </li>
+                                <li class="oneImg-li"><a href="" target="_blank"><img src="image/img-1.png"></a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="sence" style="width: 100%;height: 1.5rem;text-align: center;font-size: 0.7rem;color: #4291e4">已经没有了哦！</div>
+                </div>
+            </section>
+        </div>
+        <div class="manger-page">
+            <div class="page-hd">
+                <div id="big-arrow"><span class="ico_return"></span></div>
+                <span class="manger-action">
+                    <em class="text">城市管理</em>
+                    <em class="ico_pen"></em>
+                    <em class="ico_plus"></em>
+                    <em class="ico_change"></em>
+                </span>
+            </div>
+            <ul>
+                <li>
+                    <span class="ico_del"></span>
+                    <em style="display: inline-block">北京</em>
+                    <span class="del_button">删除</span>
+                <li>
+                    <span class="ico_del"></span>
+                    <em style="display: inline-block">上海</em>
+                    <span class="del_button">删除</span>
+                </li>
+                <li>
+                    <span class="ico_del"></span>
+                    <em style="display: inline-block">通许</em>
+                    <span class="del_button">删除</span>
+                </li>
+            </ul>
+        </div>
+        <div class="search-page">
+            <div class="page-hd">
+                <h3>
+                    <span class="ico_cancel"></span>
+                </h3>
+                <div class="title-hd">世界,一个触碰的距离</div>
+                <div class="search-con">
+                    <input type="text" placeholder="请输入要搜索的城市">
+                    <em>
+                        <span>
+                            <i class="ico_search"></i>
+                        </span>
+                    </em>
+                </div>
+            </div>
+            <dl>
+                <dt>热门城市</dt>
+                <dd><em>北京</em><em>天津</em><em>上海</em></dd>
+                <dd><em>重庆</em><em>沈阳</em><em>大连</em></dd>
+                <dd><em>郑州</em><em>武汉</em><em>长沙</em></dd>
+                <dd><em>广州</em><em>深圳</em><em>南京</em></dd>
+            </dl>
+            <div class="city-list-con">
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="add_tips">请添加一个城市</div>
+        <div class="footer"></div>
+    </div>
+<script src="js/framework.js"></script>
+<script src="js/swipe.js"></script>
+</body>
+</html>
