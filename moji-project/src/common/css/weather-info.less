@@ -1,0 +1,134 @@
+.info-box{
+  margin-left: 10px;
+  position: absolute;
+  top: 0;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  .info{
+    width: 100%;
+    color: #fff;
+    height: 280px;
+    a{
+      display: block;
+      color: #fff;
+    }
+    .tem{
+      height: 120px;
+      display: inline-block;
+      font-size: 168px;
+    }
+    .ico_temp{
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      font-family: 'iconfont';
+      vertical-align: top;
+      margin-top: 32px;
+      margin-left: -20px;
+      font-size: 32px;
+    }
+    .ico-wea{
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 36px;
+      font-size: 32px;
+    }
+  }
+  .info-about{
+    font-size: 24px;
+    margin-top: 20px;
+    i{
+      display: inline-block;
+      &.ico_water{
+        background:url("../../assets/image/icon/main_humidity.png") no-repeat;
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        background-size: 100%;
+        vertical-align: top;
+      }
+      &.ico_wind{
+        background: url("../../assets/image/icon/main_wind_direction.png") no-repeat;
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        background-size: 100%;
+        vertical-align: top;
+      }
+      &.text{
+        padding: 0 12px;
+      }
+    }
+    .info-aqi{
+      margin-top: 20px;
+      .warn-1{
+        background: url("../../assets/image/icon/notif_level1.png") no-repeat;
+      }
+      .warn-2{
+        background: url("../../assets/image/icon/notif_level2.png") no-repeat;
+      }
+      .warn-3 {
+        background: url("../../assets/image/icon/notif_level3.png") no-repeat;
+      }
+      .warn-4{
+        background: url("../../assets/image/icon/notif_level4.png") no-repeat;
+      }
+      .warn-5 {
+        background: url("../../assets/image/icon/notif_level5.png") no-repeat;
+      }
+      .warn-6{
+        background: url("../../assets/image/icon/notif_level6.png") no-repeat;
+      }
+      .info-warn {
+        width: 40px;
+        height: 40px;
+        background-size: 110%;
+      }
+      a{
+        display: block;
+        color: #fff;
+        background: rgba(0,0,0,0.2);
+        height: 52px;
+        box-sizing: border-box;
+        padding: 0  8px;
+        max-width: 176px;
+        border-radius: 16px;
+        span{
+          display: inline-block;
+          vertical-align: top;
+          margin-top: 4px;
+        }
+      }
+      strong{
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 12px;
+      }
+    }
+  }
+  .weather-announcer{
+    width: 180px;
+    height: 308px;
+    background: url("../../assets/xmm.png") no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+    top: auto;
+    left: auto;
+  }
+  .tips{
+    background: url("../../assets/image/icon/big_window.9.png") no-repeat;
+    width: 240px;
+    font-size: 24px;
+    line-height: 40px;
+    background-size: 100%;
+    padding: 0px 8px 0 15px;
+    position: absolute;
+    right: 220px;
+    top: 120px;
+    bottom: auto;
+    left: auto;
+  }
+}

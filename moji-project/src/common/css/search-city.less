@@ -1,0 +1,142 @@
+.search-page{
+  height: 100%;
+  background-color: #f5f5f5;
+  .page-hd{
+      width: 100%;
+      height: 300px;
+      background-size: auto 100%;
+      background-color: cadetblue;
+    .title-hd{
+      font-size: 32px;
+      color: #fff;
+      padding-top: 120px;
+      padding-right: 60px;
+      text-align: right;
+    }
+    .ico_close{
+      width: 120px;
+      height: 120px;
+      font-size: 48px;
+      line-height: 48px;
+      font-family: iconfont;
+      position: absolute;
+      opacity: 0.6;
+      top: 20px;
+      left: 20px;
+      z-index: 9;
+    }
+    .search-con{
+      display: flex;
+      padding-right: 60px;
+      margin-top: 40px;
+      p{
+        padding-left: 92px;
+        font-size: 28px;
+        width:75%;
+        input{
+          text-indent: 1em;
+          color: rgba(0,0,0,0.7);
+          line-height: 56px;
+          font-size: 28px;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          width: 100%;
+        }
+      }
+      span{
+        display: block;
+        text-align: center;
+        background: greenyellow;
+        line-height: 56px;
+        width: 60px;
+        font-size: 24px;
+        padding: 0 20px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+  .hot-city{
+      dt{
+        width: 100%;
+        font-size: 24px;
+        text-align: center;
+      }
+      dd{
+        width: 100%;
+        padding: 0 10px;
+        font-size: 0;
+        margin-top: 20px;
+        text-align: center;
+        em{
+          display: inline-block;
+          border: 1px solid #000;
+          padding: 10px 40px;
+          border-radius: 10px;
+          font-size: 28px;
+          &:nth-of-type(2){
+            margin: 0 40px;
+          }
+        }
+      }
+    }
+  .no_result{
+    margin-top: 40px;
+    width: 100%;
+    height: 280px;
+    font-size: 28px;
+    text-align: center;
+    position: relative;
+    &:before{
+      content: '\e637';
+      width: 600px;
+      font-size: 120px;
+      font-family: iconfont;
+      color: #000;
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      margin-left: -300px;
+    }
+    &:after{
+      content: '抱歉！没有您要搜索的信息';
+      height: 80px;
+      width:100%;
+      line-height: 80px;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+}
+.no_value{
+    margin-top: 40px;
+    width: 100%;
+    height: 280px;
+    font-size: 28px;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    &:before{
+      content: '\e62c';
+      width: 600px;
+      font-size: 120px;
+      font-family: iconfont;
+      color: #000;
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      margin-left: -300px;
+    }
+    &:after{
+      content: '好像没输入城市呢！';
+      height: 80px;
+      width:100%;
+      line-height: 80px;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+}
+}
